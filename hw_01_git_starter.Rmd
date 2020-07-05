@@ -1,6 +1,6 @@
 ---
 title: "STAT 413/613 HW 1"
-author: "Your Name"
+author: "Meiting Dong"
 date: "`r Sys.Date()`"
 output:
   html_document: 
@@ -56,9 +56,17 @@ The World Bank provides loans to countries with the goal of reducing poverty. Th
   + For the variables `1960` to `2017`, the values in the cells represent the total population in number of people for the given year. 
   + Total population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. The values shown are midyear estimates.
 
+```{r}
+library(magrittr)
+library(tidyverse)
+```
+
 1. Use relative paths to load these data frames into R.  
 ```{r, eval=TRUE}
-
+country <- read_csv("../data/country.csv")
+fertillity <- read_csv("../data/fertility.csv")
+life_exp <- read_csv("../data/life_exp.csv")
+population <- read_csv("../data/population.csv")
 ```
 
 2. These data are messy. The observational units in `fert`, `life`, and `pop` are locations in space-time (e.g. Aruba in 2017). Recall that tidy data should have one observational unit per row.  
